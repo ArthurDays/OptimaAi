@@ -1,3 +1,5 @@
+# Changelog - Óptima Digital
+
 Todas as alterações documentadas abaixo foram feitas para transformar o repositório original em uma versão pronta para produção, com foco em QA, Acessibilidade e animações premium.
 
 ## [2.0.0] - Dezembro 2025 🚀
