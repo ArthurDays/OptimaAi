@@ -2,7 +2,12 @@
 
 Todas as alterações documentadas abaixo foram feitas para transformar o repositório original em uma versão pronta para produção, com foco em QA, Acessibilidade e animações premium.
 
-## [2.0.0] - Dezembro 2025 🚀
+O repositório principal para clonagem e contribuições é: [ArthurDays/OptimaAi](https://github.com/ArthurDays/OptimaAi)
+
+---
+
+## [2.0.0] - Dezembro 2025 (Edição Sênior & Estabilidade) 🚀
+> Esta versão foca na correção de bugs críticos de estrutura, navegação e no upgrade completo da experiência mobile.
 
 ### 🛠 Correções Críticas e Estruturais
 - **Restauração de Scroll**: Corrigido erro de aninhamento HTML (tag `</header>` ausente) que bloqueava a rolagem da página.
@@ -26,48 +31,26 @@ Todas as alterações documentadas abaixo foram feitas para transformar o reposi
 
 ---
 
+## [1.1.0] - Dezembro 2025 (Refatoração & Base Premium) 💎
+> Versão inicial de transformação do repositório para um padrão pronto para produção.
 
-## 🚀 Novas Funcionalidades e Melhorias
-
-### 1. Animações e UI
+### 🚀 Novas Funcionalidades e Melhorias
 - **Infinite Typewriter Hook**: Refatorada a lógica do título principal para um loop infinito fluido.
-  - **Palavras incluídas**: Marketing Digital, Automação com IA, Tráfego Pago, Design Premium e Escalabilidade.
-  - **Melhoria**: Adicionado cursor via CSS para evitar flickers e aumentada a pausa de leitura para 4 segundos.
-- **Sistema de Toast**: Implementado sistema de notificações customizadas (Sucesso/Erro) para o formulário de contato, substituindo os `alert()` nativos do navegador.
-- **Estabilização de Layout**: Adicionadas regras CSS para garantir que a seção de estatísticas não cause "saltos" visuais durante o carregamento.
+- **Sistema de Toast (v1)**: Implementado sistema de notificações customizadas para o formulário de contato.
+- **SEO & PWA**: Criação do `robots.txt` e sincronização do Clarity SDK.
+- **Acessibilidade**: Restauração do cursor do usuário e remoção de scripts redundantes.
 
-### 2. Acessibilidade (Fixes)
-- **Cursor Restaurado**: Removida a linha de código que ocultava o cursor do usuário (`cursor: none`), garantindo que o site seja utilizável por todos.
+### 🛠 Refatoração e Limpeza
+- **Consolidação de Lógica**: FAQ e interatividades movidas para o `scripts.min.js`.
+- **Tradução Total**: Toda a documentação técnica e comentários convertidos para Português (Brasil).
+- **URLs Reais**: Substituição de placeholders `#` por links oficiais da agência.
 
-### 3. SEO & PWA
-- **Robots.txt**: Corrigida a regra que bloqueava o arquivo `manifest.json`. Agora o site é corretamente reconhecido como um Web App pelos motores de busca.
-- **Clarity SDK**: Sincronizado o ID do Microsoft Clarity (`urk9h8g1ui`) em todas as páginas para garantir trackeamento unificado.
+---
 
-## 🛠 Refatoração e Limpeza (O que foi apagado/mudado)
+## 📂 Alterações Detalhadas por Arquivo (Histórico Acumulado)
 
-- **Scripts Inline**: Removido o script redundante de FAQ do `index.html`. Toda a lógica foi consolidada no `scripts.min.js`.
-- **Lógica de Typewriter Conflitante**: Apagadas duas versões antigas e incompletas da animação de escrita que geravam textos embaralhados.
-- **Placeholders**: Substituídos os links `#` das redes sociais por URLs reais da Óptima Digital em todas as páginas secundárias.
-- **Web3Forms**: O formulário foi preparado para uso real. Adicionado comentário de aviso para o usuário inserir sua `access_key`.
-
-## 📂 Alterações Detalhadas por Arquivo
-
-- **[index.html](index.html)**: 
-  - Limpeza de scripts inline redundantes.
-  - Adição de estilos CSS para o cursor da animação e estabilização de layout.
-  - Padronização de títulos e comentários de seção em português.
-  - Preparação do formulário Web3Forms.
-- **[scripts.min.js](scripts.min.js)**:
-  - Implementação do motor de `typewriter` infinito e unificado.
-  - Correção da visibilidade do cursor (remoção de `cursor: none`).
-  - Adição do sistema de notificações Toast em português.
-  - Tradução de toda a documentação interna e comentários técnicos.
-- **[robots.txt](robots.txt)**:
-  - Correção das regras de rastreio para permitir indexação do `manifest.json`.
-- **[README.md](README.md)**:
-  - Criação de documentação profissional completa totalmente em português.
-- **[CHANGELOG.md](CHANGELOG.md)**:
-  - Este guia detalhado de alterações e histórico de versões em português.
-- **[politica-de-privacidade.html](politica-de-privacidade.html) & [termos-de-servico.html](termos-de-servico.html)**:
-  - Sincronização do ID do Microsoft Clarity.
-  - Atualização dos links reais das redes sociais no rodapé.
+- **[index.html](index.html)**: Limpeza de scripts redundantes, correção estrutural da tag header e preparação do Web3Forms.
+- **[scripts.min.js](scripts.min.js)**: Implementação do motor de typewriter unificado, validações seniores e sistema de toasts.
+- **[mobile-sidebar.css](mobile-sidebar.css)**: Criação do novo sistema de menu lateral isolado.
+- **[README.md](README.md) / [CHANGELOG.md](CHANGELOG.md)**: Documentação profissional completa em português.
+- **[robots.txt](robots.txt)**: Ajuste de regras para SEO e rastreio de PWA.
