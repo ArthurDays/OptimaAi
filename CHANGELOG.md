@@ -33,6 +33,10 @@ O repositório principal para clonagem e contribuições é: [ArthurDays/OptimaA
 - **Remoção de Redundâncias**: Eliminada a pasta de metadados de teste `.playwright-mcp`.
 - **Assets Enxutos**: Removidos 9 arquivos de imagem redundantes ou não utilizados (SVG, WEBP e PNG de sistema) para reduzir o tamanho total do projeto.
 
+### 🔌 Integrações e Produção
+- **Ativação Web3Forms**: Configurada a chave de acesso real no formulário de contato, tornando o envio de leads funcional para produção.
+- **Validação de Produção**: Removidos avisos e placeholders de configuração do formulário.
+
 ---
 
 ## [1.1.0] - Dezembro 2025 (Refatoração & Base Premium) 💎
