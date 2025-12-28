@@ -1,7 +1,7 @@
 # 🚀 Óptima Digital - Agência de Marketing & Automação com IA
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.0.0-orange.svg)](CHANGELOG.md)
 
 Óptima Digital é uma agência de marketing digital de alta performance especializada em **gestão de redes sociais**, **tráfego pago (Ads)** e **automações inteligentes com IA**. Este repositório contém o código-fonte do portal institucional, otimizado para conversão, velocidade e uma experiência de usuário premium.
 
@@ -44,7 +44,7 @@ Abaixo, uma breve descrição da função de cada arquivo principal no repositó
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/tiagofreire-ia/optimaai.git
+   git clone https://github.com/ArthurDays/OptimaAi.git
    ```
 
 2. **Configure o seu formulário**:
