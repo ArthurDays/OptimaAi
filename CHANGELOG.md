@@ -29,6 +29,10 @@ O repositório principal para clonagem e contribuições é: [ArthurDays/OptimaA
 ### ♿ Acessibilidade (A11y)
 - **Aria-Labels**: Adicionados atributos descritivos em todos os links e botões icônicos para compatibilidade total com leitores de tela.
 
+### 🧹 Limpeza e Otimização de Repositório
+- **Remoção de Redundâncias**: Eliminada a pasta de metadados de teste `.playwright-mcp`.
+- **Assets Enxutos**: Removidos 9 arquivos de imagem redundantes ou não utilizados (SVG, WEBP e PNG de sistema) para reduzir o tamanho total do projeto.
+
 ---
 
 ## [1.1.0] - Dezembro 2025 (Refatoração & Base Premium) 💎
