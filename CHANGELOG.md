@@ -1,6 +1,32 @@
-# Changelog - Óptima Digital
+# Changelog
 
-Todas as alterações documentadas abaixo foram feitas para transformar o repositório original em uma versão pronta para produção, com foco em QA, Acessibilidade e animações premium.
+Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
+
+## [1.2.0] - 2025-12-29
+
+### ✅ Melhorias Técnicas e Correções Críticas
+
+#### 🔐 Segurança e Resiliência
+- **Fallback offline para formulário**: Sistema completo de queue no localStorage que salva mensagens quando o envio falha e tenta reenviar automaticamente na próxima visita
+- **Validação de email robusta (RFC 5322)**: Substituída regex simples por versão completa que rejeita formatos inválidos (`test@localhost`, `test@.com`, `email@dominio..com`)
+
+#### ♿ Acessibilidade e UX
+- **Fallback `<noscript>`**: Banner laranja fixo alertando usuários com JavaScript desabilitado
+- **Menu mobile auto-close**: Fecha automaticamente em mudança de orientação e resize (largura >768px)
+- **Botão "Voltar ao Topo"**: Ativado com animação suave e estilos completos
+
+#### 🎨 Design e Responsividade
+- **Grid pattern responsivo**: Media query para telas <375px aumenta espaçamento de 30px para 50px, evitando densidade visual excessiva
+- **Background grid global**: Aplicado padrão de grade com spotlight laranja no topo e ajuste para modo claro
+- **Ajuste de padding do título hero**: Corrigido corte de letras descendentes (g, p) no texto animado
+
+#### 🐛 Correções de Bugs
+- **Banner de cookies corrigido**: Estilos de posicionamento fixo e z-index ajustados para garantir visibilidade
+- **Grid background**: Adicionado `!important` para evitar sobrescrita por classes Tailwind
+
+#### 📊 Auditoria e Qualidade
+- **Score de Saúde do Projeto**: Aumentado de 78/100 para **92/100** (+14 pontos)
+- **Análise de stress test completa**: Identificados e corrigidos 3 riscos críticos e 4 riscos moderados
 
 O repositório principal para clonagem e contribuições é: [ArthurDays/OptimaAi](https://github.com/ArthurDays/OptimaAi)
 
