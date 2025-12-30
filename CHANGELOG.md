@@ -2,7 +2,28 @@
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
-## [1.2.0] - 2025-12-29
+## [2.2.0] - 2025-12-30
+
+### 🧹 Higienização e Infraestrutura (Repository Sanitization)
+Esta atualização foca na saúde do repositório, garantindo que apenas arquivos essenciais sejam rastreados e que a infraestrutura de testes e qualidade esteja robusta.
+
+#### 🛡️ Infraestrutura e Qualidade (QA)
+- **Husky & Git Hooks**: Implementado hook `pre-commit` que impede commits quebrados rodando testes automaticamente.
+- **Suíte de Testes Completa**:
+  - **Unitários**: Validação robusta de Emails, Telefones e Nomes.
+  - **Segurança**: Proteção contra inputs maliciosos e ReDoS.
+  - **DOM**: Testes de integração simulando interações reais (Formulário, Menu).
+  - **PWA**: Validação do Service Worker e estratégia offline.
+- **Documentação Técnica**: README.md reescrito com instruções claras de Setup, Arquitetura e Comandos.
+
+#### 🗑️ Limpeza (Cleanup)
+- **Remoção de Artefatos**: Deletados arquivos de log (`*.log`, `*.txt`) e relatórios de erro antigos.
+- **Git Ignore**: Regras estritas implementadas para ignorar `node_modules`, `coverage` e arquivos de sistema.
+- **Whitelist**: Repositório auditado para conter Apenas o Essencial (Código Fonte + Config + Testes).
+
+---
+
+## [2.1] - 29-12-2025
 
 ### ✅ Melhorias Técnicas e Correções Críticas
 
@@ -32,7 +53,7 @@ O repositório principal para clonagem e contribuições é: [ArthurDays/OptimaA
 
 ---
 
-## [2.0.0] - Dezembro 2025 (Edição Sênior & Estabilidade) 🚀
+## [2.0] - Dezembro 2025 (Edição Sênior & Estabilidade) 🚀
 > Esta versão foca na correção de bugs críticos de estrutura, navegação e no upgrade completo da experiência mobile.
 
 ### 🛠 Correções Críticas e Estruturais
@@ -65,7 +86,7 @@ O repositório principal para clonagem e contribuições é: [ArthurDays/OptimaA
 
 ---
 
-## [1.1.0] - Dezembro 2025 (Refatoração & Base Premium) 💎
+## [1.1] - Dezembro 2025 (Refatoração & Base Premium) 💎
 > Versão inicial de transformação do repositório para um padrão pronto para produção.
 
 ### 🚀 Novas Funcionalidades e Melhorias
