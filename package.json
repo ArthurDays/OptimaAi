@@ -1,0 +1,31 @@
+{
+  "name": "optimaai",
+  "version": "1.0.0",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)\r [![Version](https://img.shields.io/badge/version-2.0.0-orange.svg)](CHANGELOG.md)",
+  "main": "scripts.min.js",
+  "scripts": {
+    "test": "jest",
+    "build": "echo 'Build complete (No build step required for this project)'",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurDays/OptimaAi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ArthurDays/OptimaAi/issues"
+  },
+  "homepage": "https://github.com/ArthurDays/OptimaAi#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-jest": "^30.2.0",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  }
+}

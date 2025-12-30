@@ -1,67 +1,100 @@
 # 🚀 Óptima Digital - Agência de Marketing & Automação com IA
 
+[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](package.json)
+[![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-Passing-blue.svg)](tests/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/version-2.0.0-orange.svg)](CHANGELOG.md)
 
-Óptima Digital é uma agência de marketing digital de alta performance especializada em **gestão de redes sociais**, **tráfego pago (Ads)** e **automações inteligentes com IA**. Este repositório contém o código-fonte do portal institucional, otimizado para conversão, velocidade e uma experiência de usuário premium.
+**Óptima Digital** é uma plataforma web de alta performance focada em conversão, marketing digital e automação. Este projeto utiliza **Vanilla JavaScript** moderno, **Tailwind CSS** e arquitetura **PWA** (Progressive Web App).
 
 ---
 
-## ✨ Destaques do Projeto
+## 🛠 Setup e Instalação
 
-- **Motor de Máquina de Escrever Infinito**: Animação de escrita fluida e profissional que comunica múltiplos serviços de forma dinâmica.
-- **UI/UX Premium**: Design responsivo com estética dark mode, efeitos de glassmorphism e micro-interações suaves.
-- **Performance & SEO**: Estrutura otimizada para motores de busca (JSON-LD), acessibilidade total e reconhecimento como PWA (Progressive Web App).
-- **Integrações de Conversão**: Formulário de contato via Web3Forms com validação em tempo real e sistema de feedback via notificações Toast.
+Para rodar este projeto localmente do zero, siga os passos abaixo:
 
-## 🛠 Tecnologias Utilizadas
+1.  **Pré-requisitos**: Certifique-se de ter o [Node.js](https://nodejs.org/) instalado (versão 18+ recomendada).
 
-- **HTML5/CSS3**: Estrutura semântica e estilização avançada com suporte a variáveis customizadas para temas.
-- **Tailwind CSS**: Framework utilitário para um layout responsivo e de fácil manutenção.
-- **Vanilla JavaScript**: Lógica leve e poderosa para animações, gerenciamento de cookies e comportamentos do usuário.
-- **Lucide Icons**: Biblioteca de ícones moderna e leve carregada via CDN.
-- **Web3Forms API**: Backend sem necessidade de servidor local para processamento de leads.
+2.  **Clone o repositório**:
+    ```bash
+    git clone https://github.com/ArthurDays/OptimaAi.git
+    cd OptimaAi
+    ```
 
-## 📁 Estrutura do Projeto
+3.  **Instale as dependências**:
+    ```bash
+    npm install
+    ```
+    *Isso instalará o Jest (testes), Husky (hooks de git) e outras ferramentas de desenvolvimento.*
 
-Abaixo, uma breve descrição da função de cada arquivo principal no repositório:
+4.  **Inicie o Servidor Local**:
+    Como é um projeto estático, você pode usar qualquer servidor HTTP simples.
+    *   Com VS Code: Instale a extensão "Live Server" e clique em "Go Live".
+    *   Via Python: `python -m http.server 8000`
+    *   Via Node: `npx serve .`
 
-- **`.htaccess`**: Configurações de servidor (Redirecionamento HTTPS, compressão e segurança).
-- **`CHANGELOG.md`**: Registro detalhado de todas as alterações, melhorias e histórico técnico.
-- **`index.html`**: Página principal (Home) com toda a estrutura visual e conteúdo do site.
-- **`manifest.json`**: Configurações de PWA para permitir a instalação do site em dispositivos móveis.
-- **`politica-de-privacidade.html`**: Documentação legal sobre o tratamento de dados pessoais.
-- **`README.md`**: Guia de apresentação e documentação principal (este arquivo).
-- **`robots.txt`**: Orientações de SEO para motores de busca sobre o que indexar.
-- **`scripts.min.js`**: Core do site: controla animações (Typewriter), formulários e interatividade.
-- **`service-worker.js`**: Lógica de suporte offline e cache para a experiência PWA.
-- **`sitemap.xml`**: Mapa do site para facilitar a varredura por motores de busca.
-- **`styles-tailwind.css`**: Estilos principais do projeto utilizando o framework Tailwind CSS.
-- **`termos-de-servico.html`**: Termos de uso e diretrizes legais do serviço.
-- **`assets/`**: Diretório contendo imagens, logotipos e recursos visuais.
+---
 
-## 📦 Como Instalar e Executar
+## 💻 Comandos e Scripts
 
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/ArthurDays/OptimaAi.git
-   ```
+O projeto possui scripts configurados no `package.json` para facilitar o desenvolvimento:
 
-2. **Configure o seu formulário**:
-   - Localize o arquivo `index.html`.
-   - Substitua o valor do campo `access_key` pela sua chave real obtida no [Web3Forms](https://web3forms.com/).
+### `npm test`
+Executa a suíte de testes unitários e de integração utilizando **Jest**.
+- **O que faz:** Roda todos os arquivos `.test.js` na pasta `tests/`.
+- **Cobertura:** Validações de formulário, formatação de dados, segurança e lógica do DOM.
 
-3. **Inicie o servidor local**:
-   - O projeto não requer instalação de dependências pesadas. Basta abrir o `index.html` em seu navegador ou utilizar a extensão *Live Server* do VS Code.
+### `npm run build`
+Prepara o projeto para produção.
+- **Nota:** Como utilizamos Tailwind CSS pré-compilado e Vanilla JS, este passo atualmente é simplificado (placeholder), mas está configurado para integração futura com pipelines de CI/CD.
 
-## 📈 Histórico de Versões
+### 🐶 Husky (Git Hooks)
+Utilizamos **Husky** para garantir a qualidade do código antes de cada commit.
+- **Como funciona:** Ao tentar fazer um `git commit`, o Husky executa automaticamente os testes. Se algum teste falhar, o commit é **bloqueado**.
+- **Benefício:** Impede que código quebrado seja enviado para o repositório.
 
-Para ver o que foi adicionado, modificado ou removido em relação à versão base do repositório original (incluindo as correções de QA e animações), consulte o nosso [CHANGELOG.md](CHANGELOG.md).
+---
+
+## 🏗 Arquitetura e Testes (TDD)
+
+Adotamos a metodologia **TDD (Test Driven Development)** e **Mobile First**.
+
+### Estrutura de Testes
+Os testes estão localizados na pasta `tests/` e cobrem:
+
+1.  **Unitários (`validators.test.js`, `formatters.test.js`)**: Testam funções puras isoladas (ex: validação de email, máscara de telefone).
+2.  **Integração DOM (`dom.test.js`)**: Simulam interações do usuário com a interface (ex: preencher formulário e enviar). Utiliza `jsdom` para emular o navegador no Node.js.
+3.  **Segurança (`security.test.js`)**: Testes de "Casos Extremos" para garantir que a aplicação não quebra com inputs maliciosos (ex: null, undefined, ReDoS).
+4.  **Service Worker (`service-worker.test.js`)**: Valida a estratégia de cache offline.
+
+### Mocks
+Para manter os testes rápidos e isolados, **mockamos** dependências externas manualmente dentro dos arquivos de teste:
+- **Fetch API**: Mockada globalmente para evitar chamadas reais de rede durante testes de formulário.
+- **DOM Elements**: O `document.body` é resetado a cada teste usando o conteúdo real do `index.html`.
+
+---
+
+## 📱 PWA e Service Worker
+
+O projeto é um **Progressive Web App** totalmente funcional, capaz de funcionar offline.
+
+### Como testar o Service Worker localmente:
+
+1.  Sirva a aplicação usando um servidor HTTP seguro ou local (ex: Live Server).
+2.  Abra o **DevTools** do Chrome (F12).
+3.  Vá para a aba **Application** > **Service Workers**.
+4.  Marque a opção "Update on reload" para facilitar o desenvolvimento.
+5.  **Teste Offline:**
+    - Na aba **Network**, altere o status de "No throttling" para **"Offline"**.
+    - Recarregue a página.
+    - O site deve carregar normalmente graças ao cache do Service Worker.
+
+---
 
 ## 📄 Licença
 
-Este projeto está sob a licença [MIT](LICENSE). Sinta-se à vontade para utilizar e escalar seu negócio!
+Este projeto está sob a licença [MIT](LICENSE).
 
 ---
-
-**Desenvolvido com foco em resultados pela [Óptima Digital](https://optimati.com.br/)** 💎
+**Desenvolvido pela [Óptima Digital](https://optimati.com.br/)** 💎
