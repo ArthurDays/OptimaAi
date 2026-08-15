@@ -1,100 +1,69 @@
-# 🚀 Óptima Digital - Agência de Marketing & Automação com IA
+# Óptima Digital
 
-[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](package.json)
-[![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg)](tests/)
-[![Tests](https://img.shields.io/badge/Tests-Passing-blue.svg)](tests/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-2.0.0-orange.svg)](CHANGELOG.md)
+[![PWA](https://img.shields.io/badge/PWA-ready-5A0FC8?logo=pwa)](manifest.json)
 
-**Óptima Digital** é uma plataforma web de alta performance focada em conversão, marketing digital e automação. Este projeto utiliza **Vanilla JavaScript** moderno, **Tailwind CSS** e arquitetura **PWA** (Progressive Web App).
+Site institucional da **Óptima Digital**, voltado a marketing, automação e soluções com inteligência artificial. O projeto combina experiência mobile-first, Progressive Web App, SEO técnico e testes automatizados — sem depender de um framework de interface em produção.
 
----
+**Site:** [optimati.com.br](https://optimati.com.br/)
 
-## 🛠 Setup e Instalação
+## O que o projeto demonstra
 
-Para rodar este projeto localmente do zero, siga os passos abaixo:
+- Interface responsiva com HTML, JavaScript e Tailwind CSS pré-compilado.
+- PWA instalável com manifesto e service worker para cache offline.
+- SEO com metadados, Open Graph, Twitter Cards, sitemap e dados estruturados.
+- Testes de validação, formatação, DOM, armazenamento, segurança e service worker.
+- Git hooks com Husky para reduzir regressões antes do commit.
+- Páginas de política de privacidade e termos de serviço.
 
-1.  **Pré-requisitos**: Certifique-se de ter o [Node.js](https://nodejs.org/) instalado (versão 18+ recomendada).
+## Arquitetura
 
-2.  **Clone o repositório**:
-    ```bash
-    git clone https://github.com/ArthurDays/OptimaAi.git
-    cd OptimaAi
-    ```
+```text
+index.html
+├── styles-tailwind.css      # estilos compilados
+├── scripts.min.js           # comportamento da interface
+├── manifest.json            # configuração da PWA
+├── service-worker.js        # cache e experiência offline
+├── assets/                  # identidade e imagens otimizadas
+└── tests/                   # testes Jest + jsdom
+```
 
-3.  **Instale as dependências**:
-    ```bash
-    npm install
-    ```
-    *Isso instalará o Jest (testes), Husky (hooks de git) e outras ferramentas de desenvolvimento.*
+## Executar localmente
 
-4.  **Inicie o Servidor Local**:
-    Como é um projeto estático, você pode usar qualquer servidor HTTP simples.
-    *   Com VS Code: Instale a extensão "Live Server" e clique em "Go Live".
-    *   Via Python: `python -m http.server 8000`
-    *   Via Node: `npx serve .`
+Requer Node.js 18+ e npm.
 
----
+```bash
+git clone https://github.com/ArthurDays/OptimaAi.git
+cd OptimaAi
+npm install
+npx serve .
+```
 
-## 💻 Comandos e Scripts
+O service worker requer HTTP local ou HTTPS; abrir `index.html` diretamente não reproduz todos os recursos da PWA.
 
-O projeto possui scripts configurados no `package.json` para facilitar o desenvolvimento:
+## Qualidade
 
-### `npm test`
-Executa a suíte de testes unitários e de integração utilizando **Jest**.
-- **O que faz:** Roda todos os arquivos `.test.js` na pasta `tests/`.
-- **Cobertura:** Validações de formulário, formatação de dados, segurança e lógica do DOM.
+```bash
+npm test       # executa a suíte Jest
+npm run build  # valida o passo de build atual
+```
 
-### `npm run build`
-Prepara o projeto para produção.
-- **Nota:** Como utilizamos Tailwind CSS pré-compilado e Vanilla JS, este passo atualmente é simplificado (placeholder), mas está configurado para integração futura com pipelines de CI/CD.
+Os testes cobrem validadores, formatadores, interações com o DOM, armazenamento no navegador, entradas potencialmente maliciosas e o service worker.
 
-### 🐶 Husky (Git Hooks)
-Utilizamos **Husky** para garantir a qualidade do código antes de cada commit.
-- **Como funciona:** Ao tentar fazer um `git commit`, o Husky executa automaticamente os testes. Se algum teste falhar, o commit é **bloqueado**.
-- **Benefício:** Impede que código quebrado seja enviado para o repositório.
+## Verificar o modo offline
 
----
+1. Execute o projeto por um servidor HTTP local.
+2. Abra DevTools → Application → Service Workers.
+3. Confirme que o service worker está registrado.
+4. Em Network, selecione **Offline** e recarregue a página.
 
-## 🏗 Arquitetura e Testes (TDD)
+## Observações de desenvolvimento
 
-Adotamos a metodologia **TDD (Test Driven Development)** e **Mobile First**.
+O arquivo `scripts.min.js` é o artefato JavaScript atualmente servido. Ao alterar comportamento, mantenha os testes alinhados e valide no navegador. O comando de build atual não realiza bundling; essa decisão mantém a entrega estática simples.
 
-### Estrutura de Testes
-Os testes estão localizados na pasta `tests/` e cobrem:
+## Licença
 
-1.  **Unitários (`validators.test.js`, `formatters.test.js`)**: Testam funções puras isoladas (ex: validação de email, máscara de telefone).
-2.  **Integração DOM (`dom.test.js`)**: Simulam interações do usuário com a interface (ex: preencher formulário e enviar). Utiliza `jsdom` para emular o navegador no Node.js.
-3.  **Segurança (`security.test.js`)**: Testes de "Casos Extremos" para garantir que a aplicação não quebra com inputs maliciosos (ex: null, undefined, ReDoS).
-4.  **Service Worker (`service-worker.test.js`)**: Valida a estratégia de cache offline.
-
-### Mocks
-Para manter os testes rápidos e isolados, **mockamos** dependências externas manualmente dentro dos arquivos de teste:
-- **Fetch API**: Mockada globalmente para evitar chamadas reais de rede durante testes de formulário.
-- **DOM Elements**: O `document.body` é resetado a cada teste usando o conteúdo real do `index.html`.
+Consulte os termos definidos no repositório antes de redistribuir o projeto.
 
 ---
 
-## 📱 PWA e Service Worker
-
-O projeto é um **Progressive Web App** totalmente funcional, capaz de funcionar offline.
-
-### Como testar o Service Worker localmente:
-
-1.  Sirva a aplicação usando um servidor HTTP seguro ou local (ex: Live Server).
-2.  Abra o **DevTools** do Chrome (F12).
-3.  Vá para a aba **Application** > **Service Workers**.
-4.  Marque a opção "Update on reload" para facilitar o desenvolvimento.
-5.  **Teste Offline:**
-    - Na aba **Network**, altere o status de "No throttling" para **"Offline"**.
-    - Recarregue a página.
-    - O site deve carregar normalmente graças ao cache do Service Worker.
-
----
-
-## 📄 Licença
-
-Este projeto está sob a licença [MIT](LICENSE).
-
----
-**Desenvolvido pela [Óptima Digital](https://optimati.com.br/)** 💎
+Desenvolvido pela [Óptima Digital](https://optimati.com.br/).
