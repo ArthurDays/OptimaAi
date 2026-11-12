@@ -1,14 +1,14 @@
 # 🚀 Óptima Digital - Agência de Marketing & Automação com IA
 
-[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](package.json)
-[![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg)](tests/)
-[![Tests](https://img.shields.io/badge/Tests-Passing-blue.svg)](tests/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-2.0.0-orange.svg)](CHANGELOG.md)
 
-**Óptima Digital** é uma plataforma web de alta performance focada em conversão, marketing digital e automação. Este projeto utiliza **Vanilla JavaScript** moderno, **Tailwind CSS** e arquitetura **PWA** (Progressive Web App).
+**Óptima Digital** é uma interface web focada em conversão, marketing digital e automação. Este projeto utiliza **Vanilla JavaScript** moderno, **Tailwind CSS** e arquitetura **PWA** (Progressive Web App).
 
 ---
+
+## Estado e validação
+
+Este repositório apresenta uma interface web. Não há percentual de cobertura ou resultado de testes certificado por este README. Execute a suíte e consulte os relatórios gerados para avaliar a versão utilizada.
 
 ## 🛠 Setup e Instalação
 
@@ -46,13 +46,13 @@ Executa a suíte de testes unitários e de integração utilizando **Jest**.
 - **Cobertura:** Validações de formulário, formatação de dados, segurança e lógica do DOM.
 
 ### `npm run build`
-Prepara o projeto para produção.
+O script atual é um placeholder; sua conclusão não comprova que o projeto está pronto para produção.
 - **Nota:** Como utilizamos Tailwind CSS pré-compilado e Vanilla JS, este passo atualmente é simplificado (placeholder), mas está configurado para integração futura com pipelines de CI/CD.
 
 ### 🐶 Husky (Git Hooks)
-Utilizamos **Husky** para garantir a qualidade do código antes de cada commit.
+O projeto utiliza **Husky** para executar verificações locais antes dos commits.
 - **Como funciona:** Ao tentar fazer um `git commit`, o Husky executa automaticamente os testes. Se algum teste falhar, o commit é **bloqueado**.
-- **Benefício:** Impede que código quebrado seja enviado para o repositório.
+- **Benefício:** Ajuda a detectar falhas antes do commit quando os hooks estão instalados e ativos; não substitui a validação em CI.
 
 ---
 
@@ -65,7 +65,7 @@ Os testes estão localizados na pasta `tests/` e cobrem:
 
 1.  **Unitários (`validators.test.js`, `formatters.test.js`)**: Testam funções puras isoladas (ex: validação de email, máscara de telefone).
 2.  **Integração DOM (`dom.test.js`)**: Simulam interações do usuário com a interface (ex: preencher formulário e enviar). Utiliza `jsdom` para emular o navegador no Node.js.
-3.  **Segurança (`security.test.js`)**: Testes de "Casos Extremos" para garantir que a aplicação não quebra com inputs maliciosos (ex: null, undefined, ReDoS).
+3.  **Segurança (`security.test.js`)**: Testes de casos extremos para verificar o comportamento com entradas inesperadas (ex: null, undefined, ReDoS).
 4.  **Service Worker (`service-worker.test.js`)**: Valida a estratégia de cache offline.
 
 ### Mocks
@@ -77,7 +77,7 @@ Para manter os testes rápidos e isolados, **mockamos** dependências externas m
 
 ## 📱 PWA e Service Worker
 
-O projeto é um **Progressive Web App** totalmente funcional, capaz de funcionar offline.
+O projeto inclui recursos de **Progressive Web App** e cache por service worker. O comportamento offline deve ser verificado por fluxo; chamadas a serviços externos dependem de conexão.
 
 ### Como testar o Service Worker localmente:
 
